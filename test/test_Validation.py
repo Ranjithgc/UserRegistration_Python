@@ -32,3 +32,23 @@ class TestUserValidation(unittest.TestCase):
         self.assertFalse(validate.validateName("Ranj1th"))
         self.assertFalse(validate.validateName("R@njith"))
         
+    def test_givenValidLastName_shouldReturnTrue(self):
+        '''
+        Description:
+            The given valid last name should return true in this test case.
+        '''
+
+        self.assertTrue(validate.validateName("Arun"))
+        self.assertTrue(validate.validateName("Aru"))
+    
+    def test_givenInValidLastName_shouldReturnFalse(self):
+        '''
+        Description:
+            The given invalid last name should return false in this test case.
+        '''
+
+        self.assertFalse(validate.validateName("arun"))
+        self.assertFalse(validate.validateName("Ar"))
+        self.assertFalse(validate.validateName("ARN"))  
+        self.assertFalse(validate.validateName("Ar1"))
+        self.assertFalse(validate.validateName("@ru"))
