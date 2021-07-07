@@ -72,6 +72,26 @@ class Validation:
         except Exception as e:
             logger.error(e)
 
+    def validatePassword(self, password):
+        '''
+        Description:
+            This function is used for validating password with regex pattern.
+        Parameter:
+            it takes self, password as parameters
+        Return:
+            It return a valid true if password is valid and false if it's invalid.
+        '''
+
+        try:
+
+            if(re.match("^[a-z]{8,}$", password)):
+                return True
+            else:
+                return False
+        
+        except Exception as e:
+            logger.error(e)
+
     def input(self):
         '''
         Description:
@@ -94,6 +114,9 @@ class Validation:
             phoneNumber = input("Enter Users Phone Number")
             logger.info(self.validateNumber(phoneNumber))
 
+            password = input("Enter the Users Password")
+            logger.info(self.validatePassword(password))
+            
         except Exception as e:
             logger.error(e)
 
