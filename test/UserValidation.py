@@ -15,6 +15,8 @@ class Validation:
         '''
         Description:
             This method is used for validating name with regex pattern.
+        Parameter:
+            it takes name as parameter
         Return:
             It return a valid true if name is valid and false if it's invalid.
         '''
