@@ -108,6 +108,7 @@ class TestUserValidation(unittest.TestCase):
         Parameter:
             It takes self as a parameter
         """
+        
         self.assertTrue(validate.validatePassword("Arunranjith"))
 
     def test_givenInValidPassword_shouldReturnFalse(self):
