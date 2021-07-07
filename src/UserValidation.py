@@ -45,6 +45,9 @@ class Validation:
             firstName = input("Enter your First Name: ")
             logger.info(self.validateName(firstName))
 
+            lastName = input("Enter Users Last Name")
+            logger.info(self.validateName(lastName))
+            
         except Exception as e:
             logger.error(e)
 
