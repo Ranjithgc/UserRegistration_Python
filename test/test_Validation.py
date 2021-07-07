@@ -109,6 +109,7 @@ class TestUserValidation(unittest.TestCase):
             It takes self as a parameter
         """
         self.assertTrue(validate.validatePassword("arunranjith"))
+        self.assertTrue(validate.validatePassword("Arunranjith"))
 
     def test_givenInValidPassword_shouldReturnFalse(self):
         """
@@ -120,21 +121,5 @@ class TestUserValidation(unittest.TestCase):
         self.assertFalse(validate.validatePassword("arunranjith12"))
         self.assertFalse(validate.validatePassword("arunran"))
 
-    def test_givenValidPassword_1UpperCase_shouldReturnTrue(self):
-        """
-        Description:
-            The given valid password should return true in test case
-        Parameter:
-            It takes self as a parameter
-        """
-        self.assertTrue(validate.validatePassword("Arunranjith"))
-
-    def test_givenInValidPassword_1UpperCase_shouldReturnTrue(self):
-        """
-        Description:
-            The given valid password should return true in test case
-        Parameter:
-            It takes self as a parameter
-        """
-        self.assertFalse(validate.validatePassword("arunranjith"))
+    
 
