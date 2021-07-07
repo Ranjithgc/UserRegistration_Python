@@ -110,6 +110,7 @@ class TestUserValidation(unittest.TestCase):
         """
         
         self.assertTrue(validate.validatePassword("Arun@ranjith12"))
+        self.assertTrue(validate.validatePassword("Rrunranjith1234@"))
 
     def test_givenInValidPassword_shouldReturnFalse(self):
         """
@@ -120,6 +121,9 @@ class TestUserValidation(unittest.TestCase):
         """
         self.assertFalse(validate.validatePassword("arunranjith12"))
         self.assertFalse(validate.validatePassword("arunran"))
+        self.assertFalse(validate.validatePassword("1ARUnRa"))
+        self.assertFalse(validate.validatePassword("1234567"))
+        self.assertFalse(validate.validatePassword("!@#$%1a"))
 
     
 
