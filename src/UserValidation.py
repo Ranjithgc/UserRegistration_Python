@@ -84,7 +84,7 @@ class Validation:
 
         try:
 
-            if(re.match("^[a-z]{8,}$", password)):
+            if(re.match("^[A-Z]{1}[a-z]{8,}$", password)):
                 return True
             else:
                 return False
