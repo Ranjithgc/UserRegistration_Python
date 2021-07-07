@@ -52,6 +52,25 @@ class Validation:
         except Exception as e:
             logger.error(e)
 
+    def validateNumber(self, phone):
+        '''
+        Description:
+            This function is used for validating mobile number with regex pattern.
+        Parameter:
+            it takes self, phone as parameters
+        Return:
+            It return a valid true if phone is valid and false if it's invalid.
+        '''
+
+        try:
+
+            if(re.match("^[\+][9?][1?][\-\s]?[6-9]{1}[\d]{9}$", phone)):
+                return True
+            else:
+                return False
+
+        except Exception as e:
+            logger.error(e)
 
     def input(self):
         '''
@@ -71,6 +90,9 @@ class Validation:
             
             email = input("Enter Users Email ID")
             logger.info(self.validateEmail(email))
+
+            phoneNumber = input("Enter Users Phone Number")
+            logger.info(self.validateNumber(phoneNumber))
 
         except Exception as e:
             logger.error(e)
