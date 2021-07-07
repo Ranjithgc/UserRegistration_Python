@@ -29,3 +29,24 @@ class Validation:
         
         except Exception as e:
             logger.error(e)
+
+    
+    def validateEmail(email):
+        '''
+        Description:
+            This function is used for validating email with regex pattern.
+        Parameter:
+            it takes self, email as parameters
+        Return:
+            It return a valid true if email is valid and false if it's invalid.
+        '''
+
+        try:
+            
+            if (re.match("^([a-z]{2,}[0-9a-z]{1,}([_+-.*$#]{0,1}[a-z0-9]{1,}){0,1}[@]{1}[a-z0-1]{1,}[.]{1}[a-z]{2,4}([.]{0,1}[a-z]{2,3}){0,1})$", email)):
+                return True
+            else:
+                return False
+
+        except Exception as e:
+            logger.error(e)
