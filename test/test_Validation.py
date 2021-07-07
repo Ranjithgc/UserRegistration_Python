@@ -109,7 +109,7 @@ class TestUserValidation(unittest.TestCase):
             It takes self as a parameter
         """
         
-        self.assertTrue(validate.validatePassword("Arunranjith"))
+        self.assertTrue(validate.validatePassword("Arun@ranjith12"))
 
     def test_givenInValidPassword_shouldReturnFalse(self):
         """
