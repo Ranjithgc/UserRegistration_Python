@@ -77,22 +77,22 @@ class TestUserValidation(unittest.TestCase):
 
     def test_givenValidPhoneNumber_shouldReturnTrue(self):
         """
-    Description:
-        The given valid Phone number should return true in test case
-    Parameter:
-        It takes self as a parameter.
-    """
+        Description:
+            The given valid Phone number should return true in test case
+        Parameter:
+            It takes self as a parameter.
+        """
         self.assertTrue(validate.validateNumber("+91-8618663565"))
         self.assertTrue(validate.validateNumber("+91 6865123321"))
 
     
     def test_givenInvalidPhoneNumber_shouldReturnFalse(self):
         """
-    Description:
-        The given invalid phone number should return true in test case
-    Parameter:
-        It takes self as a parameter.
-    """
+        Description:
+            The given invalid phone number should return true in test case
+        Parameter:
+            It takes self as a parameter.
+        """
         self.assertFalse(validate.validateNumber("+91-874543"))
         self.assertFalse(validate.validateNumber("+91-0432346578"))
         self.assertFalse(validate.validateNumber("+91 572781254324"))
@@ -100,3 +100,22 @@ class TestUserValidation(unittest.TestCase):
         self.assertFalse(validate.validateNumber("+91  6587654324"))
         self.assertFalse(validate.validateNumber("+91-876365r324"))
         self.assertFalse(validate.validateNumber("+91-87656@r324"))
+
+    def test_givenValidPassword_shouldReturnTrue(self):
+        """
+        Description:
+            The given valid password should return true in test case
+        Parameter:
+            It takes self as a parameter
+        """
+        self.assertTrue(validate.validatePassword("arunranjith"))
+
+    def test_givenInValidPassword_shouldReturnFalse(self):
+        """
+        Description:
+            The given Invalid password should return true in test case
+        Parameter:
+            It takes self as a parameter
+        """
+        self.assertFalse(validate.validatePassword("arunranjith12"))
+        self.assertFalse(validate.validatePassword("arunran"))
