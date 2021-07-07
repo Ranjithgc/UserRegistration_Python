@@ -52,3 +52,27 @@ class TestUserValidation(unittest.TestCase):
         self.assertFalse(validate.validateName("ARN"))  
         self.assertFalse(validate.validateName("Ar1"))
         self.assertFalse(validate.validateName("@ru"))
+
+    def test_givenValidEmail_shouldReturnTrue(self):
+        '''
+        Description:
+            The given valid email should return true in test case
+        Parameter:
+            It takes self as a parameter.
+        '''
+
+        self.assertTrue(validate.validateEmail("abc10@yahoo.com"))
+        self.assertTrue(validate.validateEmail("abc-100@yahoo.com"))
+
+    def test_givenInvalidEmail_shouldReturnFalse(self):
+        '''
+        Description:
+            The given invalid Email should return false in test case
+        Parameter:
+            It takes self as a parameter.
+        '''
+
+        self.assertFalse(validate.validateEmail("ranjith@.com"))
+        self.assertFalse(validate.validateEmail("ran@gmail"))
+
+    
