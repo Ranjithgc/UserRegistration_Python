@@ -61,8 +61,14 @@ class TestUserValidation(unittest.TestCase):
             It takes self as a parameter.
         '''
 
-        self.assertTrue(validate.validateEmail("abc10@yahoo.com"))
-        self.assertTrue(validate.validateEmail("abc-100@yahoo.com"))
+        self.assertTrue(validate.validateEmail("ranjith10@yahoo.com"))
+        self.assertTrue(validate.validateEmail("ranjith-100@yahoo.com"))
+        self.assertTrue(validate.validateEmail("ran.100@yahoo.com"))
+        self.assertTrue(validate.validateEmail("arun111@abc.com"))
+        self.assertTrue(validate.validateEmail("arun-100@abc.net"))
+        self.assertTrue(validate.validateEmail("arunra.100@abc.com.au"))
+        self.assertTrue(validate.validateEmail("abc@1.com"))
+        self.assertTrue(validate.validateEmail("abc@gmail.com.com"))
 
     def test_givenInvalidEmail_shouldReturnFalse(self):
         '''
@@ -74,6 +80,10 @@ class TestUserValidation(unittest.TestCase):
 
         self.assertFalse(validate.validateEmail("ranjith@.com"))
         self.assertFalse(validate.validateEmail("ran@gmail"))
+        self.assertFalse(validate.validateEmail("ranji..28@gmail.com"))
+        self.assertFalse(validate.validateEmail("ranjith123@gmail.c"))
+        self.assertFalse(validate.validateEmail("aun@arc@gmail.com"))
+        self.assertFalse(validate.validateEmail(".arun@@gmail.com"))
 
     def test_givenValidPhoneNumber_shouldReturnTrue(self):
         """
