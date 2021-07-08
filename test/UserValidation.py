@@ -22,11 +22,7 @@ class UserValidation:
         '''
 
         try:
-            if (re.match("^[A-Z]{1}[a-z]{2,}$",name)):
-                return True
-            else:
-                return False
-        
+            return bool(re.match("^[A-Z]{1}[a-z]{2,}$",name))        
         except Exception as e:
             logger.error(e)
 
@@ -43,10 +39,7 @@ class UserValidation:
 
         try:
             
-            if (re.match("^([a-z]{2,}[0-9a-z]{1,}([_+-.*$#]{0,1}[a-z0-9]{1,}){0,1}[@]{1}[a-z0-1]{1,}[.]{1}[a-z]{2,4}([.]{0,1}[a-z]{2,3}){0,1})$", email)):
-                return True
-            else:
-                return False
+            return bool(re.match("^([a-z]{2,}[0-9a-z]{1,}([_+-.*$#]{0,1}[a-z0-9]{1,}){0,1}[@]{1}[a-z0-1]{1,}[.]{1}[a-z]{2,4}([.]{0,1}[a-z]{2,3}){0,1})$", email))
 
         except Exception as e:
             logger.error(e)
@@ -63,11 +56,8 @@ class UserValidation:
 
         try:
 
-            if(re.match("^[\+][9?][1?][\-\s]?[6-9]{1}[\d]{9}$", phone)):
-                return True
-            else:
-                return False
-
+            return bool(re.match("^[\+][9?][1?][\-\s]?[6-9]{1}[\d]{9}$", phone))
+                
         except Exception as e:
             logger.error(e)
 
@@ -83,10 +73,7 @@ class UserValidation:
 
         try:
 
-            if(re.match("^(?=.*[@#$%^&+=])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$", password)):
-                return True
-            else:
-                return False
+            return bool(re.match("^(?=.*[@#$%^&+=])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$", password))
         
         except Exception as e:
             logger.error(e)
