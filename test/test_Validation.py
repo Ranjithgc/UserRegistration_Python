@@ -6,7 +6,7 @@
 @Title : Program Aim is to validate user entered details using regular expression.
 """
 
-from UserValidation import Validation as validate
+from UserValidation import UserValidation as validate
 import unittest
 
 class TestUserValidation(unittest.TestCase):

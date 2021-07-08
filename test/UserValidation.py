@@ -9,7 +9,7 @@ import re
 
 from loggers import logger
 
-class Validation:
+class UserValidation:
 
     def validateName(name):
         '''
